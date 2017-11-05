@@ -36,7 +36,7 @@ def _get_git_detached_branch():
                          env=git_subprocess_env())
     detached_ref = p.communicate()[0].decode("utf-8").rstrip('\n')
     if p.returncode == 0:
-        branch = u'{} {}'.format(RepoStats.symbols['detached'], detached_ref)
+        branch = u'{0} {1}'.format(RepoStats.symbols['detached'], detached_ref)
     else:
         branch = 'Big Bang'
     return branch
